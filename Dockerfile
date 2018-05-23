@@ -11,8 +11,8 @@ RUN echo alias nodejs=node >> /root/.bashrc && \
     curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash && \
     curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - && \
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list && \
-    sudo apt-get update && \
-    sudo apt-get install --no-install-recommends yarn && \
+    sudo apt-get update -qq && \
+    sudo apt-get install -qq --no-install-recommends yarn && \
     rm -rf /var/lib/apt/lists/*
 
 # Install Mono
