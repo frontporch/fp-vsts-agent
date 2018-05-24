@@ -1,7 +1,7 @@
 FROM microsoft/vsts-agent:ubuntu-16.04-docker-17.12.0-ce-standard
 
 # Setting this variable causes NVM to install it automaticly when NVM is installed
-ARG NODE_VERSION=9.11.1
+ARG NODE_VERSION=8.11.2
 
 # Install NVM and Yarn
 RUN echo alias nodejs=node >> /root/.bashrc && \
