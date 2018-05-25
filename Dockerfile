@@ -13,6 +13,9 @@ RUN echo alias nodejs=node >> /root/.bashrc && \
     chmod +x /root/.nvm/nvm && \
     chmod +x /root/.nvm/nvm.sh
 
+# Add NVM to the PATH
+ENV PATH="${PATH}:/root/.nvm"
+
 # Advertise nvm capability to VSTS
 ENV nvm=/root/.nvm/nvm.sh
 
