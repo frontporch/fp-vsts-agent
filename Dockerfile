@@ -6,9 +6,12 @@ ARG NODE_VERSION=9.11.1
 # The version of NVM to install
 ENV NVM_VERSION=0.33.11
 
-# Install NVM and Yarn
+# Install NVM
 RUN echo alias nodejs=node >> /root/.bashrc && \
-    curl -o- https://raw.githubusercontent.com/creationix/nvm/v${NVM_VERSION}/install.sh | bash
+    curl -o- https://raw.githubusercontent.com/creationix/nvm/v${NVM_VERSION}/install.sh | bash && \
+    echo '#!/bin/bash\n/root/.nvm/nvm.sh "$@"' > /root/.nvm/nvm && \
+    chmod +x /root/.nvm/nvm && \
+    chmod +x /root/.nvm/nvm.sh
 
 # Advertise nvm capability to VSTS
 ENV nvm=/root/.nvm/nvm.sh
