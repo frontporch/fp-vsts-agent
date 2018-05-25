@@ -44,6 +44,7 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E03280
     apt-get install -qq mono-runtime=${MONO_VERSION}* binutils curl mono-devel ca-certificates-mono fsharp mono-vbnc nuget referenceassemblies-pcl && \
     rm -rf /var/lib/apt/lists/* /tmp/*
 
+# The version of GitVersion to install
 ENV GITVERSION_VERSION=4.0.0-beta.13
 
 # Install GitVersion
@@ -61,3 +62,13 @@ ENV PATH="${PATH}:/usr/lib/GitVersion/tools"
 
 # Advertise GitVersion capability to VSTS
 ENV GitVersion=/usr/lib/GitVersion/tools/GitVersion
+
+# The version of AWS CLI to install
+ENV AWSCLI_VERSION=1.15.27
+
+# Install AWS CLI
+RUN pip install --upgrade setuptools wheel && \
+    pip install --upgrade awscli==${AWSCLI_VERSION}
+
+# Advertise AWS CLI capability to VSTS
+ENV aws=/usr/local/bin/aws
