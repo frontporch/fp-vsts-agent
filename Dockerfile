@@ -1,7 +1,7 @@
 FROM microsoft/vsts-agent:ubuntu-16.04-standard 
  
-ENV DOCKER_CHANNEL stable 
-ENV DOCKER_VERSION 18.03.1-ce 
+ENV DOCKER_CHANNEL edge 
+ENV DOCKER_VERSION 18.05.0-ce 
  
 RUN set -ex \ 
  && curl -fL "https://download.docker.com/linux/static/${DOCKER_CHANNEL}/`uname -m`/docker-${DOCKER_VERSION}.tgz" -o docker.tgz \ 
@@ -9,7 +9,7 @@ RUN set -ex \
  && rm docker.tgz \ 
  && docker -v 
  
-ENV DOCKER_COMPOSE_VERSION 1.21.0 
+ENV DOCKER_COMPOSE_VERSION 1.21.2
  
 RUN set -x \ 
  && curl -fSL "https://github.com/docker/compose/releases/download/$DOCKER_COMPOSE_VERSION/docker-compose-`uname -s`-`uname -m`" -o /usr/local/bin/docker-compose \ 
