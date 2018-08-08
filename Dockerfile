@@ -1,4 +1,4 @@
-FROM microsoft/vsts-agent:ubuntu-16.04-standard 
+FROM microsoft/vsts-agent:ubuntu-16.04-standard
  
 ENV DOCKER_CHANNEL edge 
 ENV DOCKER_VERSION 18.05.0-ce 
@@ -34,18 +34,18 @@ ENV PATH="${PATH}:/root/.nvm"
 # Advertise nvm capability to VSTS
 ENV nvm=/root/.nvm/nvm.sh
 
-# The version of yarn to install
-ENV YARN_VERSION=1.7.0
+# # The version of yarn to install
+# ENV YARN_VERSION=1.9.4
 
-# Install yarn
-RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - && \
-    echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list && \
-    apt-get update -qq && \
-    apt-get install -qq --no-install-recommends yarn=${YARN_VERSION}* && \
-    rm -rf /var/lib/apt/lists/*
+# # Install yarn
+# RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - && \
+#     echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list && \
+#     apt-get update -qq && \
+#     apt-get install -qq --no-install-recommends yarn=${YARN_VERSION}* && \
+#     rm -rf /var/lib/apt/lists/*
 
-# Advertise yarn capability to VSTS
-ENV yarn=/usr/bin/yarn
+# # Advertise yarn capability to VSTS
+# ENV yarn=/usr/bin/yarn
 
 # The version of Mono to install
 ENV MONO_VERSION=5.12.0.226
