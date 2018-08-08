@@ -79,7 +79,7 @@ ENV PATH="${PATH}:/usr/lib/GitVersion/tools"
 ENV GitVersion=/usr/lib/GitVersion/tools/GitVersion
 
 # The version of AWS CLI to install
-ENV AWSCLI_VERSION=1.15.27
+ENV AWSCLI_VERSION=1.15.73
 
 # Install AWS CLI
 RUN pip install --upgrade setuptools wheel && \
