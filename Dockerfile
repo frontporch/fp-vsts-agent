@@ -47,17 +47,17 @@ ENV nvm=/root/.nvm/nvm.sh
 # # Advertise yarn capability to VSTS
 # ENV yarn=/usr/bin/yarn
 
-# The version of Mono to install
-ENV MONO_VERSION=5.12.0.226
+# # The version of Mono to install
+# ENV MONO_VERSION=5.12.0.226
 
-# Install Mono (required for GitVersion)
-# https://www.mono-project.com/download/stable/#download-lin
-RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF && \
-    apt install apt-transport-https && \
-    echo "deb https://download.mono-project.com/repo/ubuntu stable-xenial main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list && \
-    apt-get update -qq && \
-    apt-get install -qq mono-runtime=${MONO_VERSION}* binutils curl mono-devel ca-certificates-mono fsharp mono-vbnc nuget referenceassemblies-pcl && \
-    rm -rf /var/lib/apt/lists/* /tmp/*
+# # Install Mono (required for GitVersion)
+# # https://www.mono-project.com/download/stable/#download-lin
+# RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF && \
+#     apt install apt-transport-https && \
+#     echo "deb https://download.mono-project.com/repo/ubuntu stable-xenial main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list && \
+#     apt-get update -qq && \
+#     apt-get install -qq mono-runtime=${MONO_VERSION}* binutils curl mono-devel ca-certificates-mono fsharp mono-vbnc nuget referenceassemblies-pcl && \
+#     rm -rf /var/lib/apt/lists/* /tmp/*
 
 # The version of GitVersion to install
 ENV GITVERSION_VERSION=4.0.0-beta.13
