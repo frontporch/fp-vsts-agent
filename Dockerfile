@@ -36,7 +36,7 @@ ENV PATH="${PATH}:/root/.nvm"
 ENV nvm=/root/.nvm/nvm.sh
 
 # The version of GitVersion to install
-ENV GITVERSION_VERSION=4.0.0-beta.13
+ENV GITVERSION_VERSION=4.0.0-beta.14
 
 # Install GitVersion
 # https://github.com/sashagavrilov/docker-gitversion/blob/master/Dockerfile
