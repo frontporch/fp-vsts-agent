@@ -48,6 +48,9 @@ RUN GITVERSION_PREFIX=${GITVERSION_VERSION%.*} && \
   echo '#!/bin/bash\nmono /usr/lib/GitVersion/tools/GitVersion.exe "$@"' > /usr/lib/GitVersion/tools/GitVersion && \
   chmod +x /usr/lib/GitVersion/tools/GitVersion
 
+# Advertise yarn capability to VSTS
+ENV yarn=/usr/bin/yarn
+
 # Add GitVersion to the PATH
 ENV PATH="${PATH}:/usr/lib/GitVersion/tools"
 
