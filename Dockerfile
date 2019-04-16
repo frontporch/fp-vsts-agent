@@ -64,5 +64,8 @@ ENV AWSCLI_VERSION=1.15.73
 RUN pip install --upgrade setuptools wheel && \
   pip install --upgrade awscli==${AWSCLI_VERSION}
 
+# Add fonts
+COPY usr/local/share/fonts/lucida-fonts /usr/local/share/fonts/lucida-fonts
+
 # Advertise AWS CLI capability to VSTS
 ENV aws=/usr/local/bin/aws
